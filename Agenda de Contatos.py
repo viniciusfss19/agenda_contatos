@@ -17,20 +17,33 @@ def menu():
         cadastrarcontato()
     elif opcao=="2":
         listarcontato()
-    elif opcao== "3":
+    elif opcao == "3":
         deletarcontato()
     else:
         buscarcontato() 
 
 
 def cadastrarcontato():
-    return print(f'CADASTRE O CONTATO')
+     nome= input('Nome do contato')
+     idcontato= int(input('Adicione um codigo ID para o contato'))
+     telefone=input('Número de Telefone')
+     endereco=input('Endereço')
+     numeroresidencia=input("Digite o número da residência")
+     email=input('E-mail')
+     try:
+        agenda = open("agenda.txt","a")
+        dados = f'{nome};{idcontato};{telefone};{endereco};{numeroresidencia};{email}\n'
+        agenda.write(dados)
+        agenda.close()
+        print('Contato Salvo com Sucesso :)')
+     except:
+         print('Erro na Gravação do contato')
 
 def listarcontato():
     print(f'LISTAR CONTATO')
 
 def deletarcontato():
-    prit(f'DELETAR O CONTATO')
+    print(f'DELETAR O CONTATO')
 
 def buscarcontato():
     print(f'BUSCAR CONTATO')
