@@ -3,7 +3,7 @@ def menu():
     ===============================================================
                             AGENDA DE CONTATO 
     ===============================================================        
-            MENU:
+                                    MENU:
     [1] CADASTRAR CONTATOS
     [2] LISTAR CONTATOS
     [3] DELETAR CONTATO
