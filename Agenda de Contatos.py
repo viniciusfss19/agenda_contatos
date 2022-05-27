@@ -31,7 +31,7 @@ def cadastrarcontato():
      numeroresidencia=input("Digite o número da residência")
      email=input('E-mail')
      try:
-        agenda = open("agenda.txt","a")
+        agenda = open("agenda.txt","a") #'a' é para disponibilizar a agenda para edição#
         dados = f'{nome};{idcontato};{telefone};{endereco};{numeroresidencia};{email}\n'
         agenda.write(dados)
         agenda.close()
@@ -40,7 +40,10 @@ def cadastrarcontato():
          print('Erro na Gravação do contato')
 
 def listarcontato():
-    print(f'LISTAR CONTATO')
+    agenda = open('agenda.txt','r') #'r' é para disponibilizar a agenda para leitura#
+    for contato in agenda:
+        print(contato)
+
 
 def deletarcontato():
     print(f'DELETAR O CONTATO')
