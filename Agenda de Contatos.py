@@ -24,7 +24,7 @@ def menu():
 
 
 def cadastrarcontato():
-     nome= input('Nome do contato')
+     nome= str(input('Nome do contato'))
      idcontato= int(input('Adicione um codigo ID para o contato'))
      telefone=input('Número de Telefone')
      endereco=input('Endereço')
