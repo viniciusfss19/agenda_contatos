@@ -7,7 +7,7 @@ def menu():
     [1] CADASTRAR CONTATOS
     [2] LISTAR CONTATOS
     [3] DELETAR CONTATO
-    [4] BUSCAR CONTATO PELO INOME
+    [4] BUSCAR CONTATO PELO NOME
     [5] SAIR
     ===============================================================    
     ESCOLHA UMA DAS OPÇÕES A CIMA:
