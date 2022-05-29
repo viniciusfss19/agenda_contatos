@@ -27,7 +27,7 @@ def menu():
 
 
 def cadastrarcontato():
-     nome_contato = str(input('Nome do contato'))
+     nome_contato = str(input('Nome do contato')).strip().upper()
      idcontato = int(input('Adicione um codigo ID para o contato'))
      telefone =input('Número de Telefone')
      endereco =input('Endereço')
@@ -49,18 +49,35 @@ def listarcontato():
     agenda.close()
 
 def deletarcontato():
-    print(f'DELETAR O CONTATO')
+    nome_delet = input("Digite o contato a ser deletato: ")
+    agenda = open( 'agenda.txt','r')
+    aux = []
+    aux2 = []
+    for i in agenda:
+        aux.append(i)
+    for i in range(0,len(aux)):
+        if nome_delet not in aux[i]:
+            aux2.append(aux[i])
+    agenda = open("agenda.txt","w")
+    for i in aux2:
+        agenda.write(i)
+    print('contato deletado com sucesso')
+    listarcontato()
+
+
 
 def buscarcontato():
-    nome = input('Digite o nome do contato: ')
-    nome = nome.upper().strip()
+    nome = input('Digite o nome do contato: ').strip().upper()
     agenda = open('agenda.txt', 'r')  # 'r' é para disponibilizar a agenda para leitura#
 
     for contato in agenda:
         if nome in contato.split(":")[0]:
-          print(contato)
+            print(contato)
+            break
+
         else:
             print('contato inexistente')
+            break
 
 
     agenda.close()
