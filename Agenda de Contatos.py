@@ -71,7 +71,7 @@ def buscarcontato():
     agenda = open('agenda.txt', 'r')  # 'r' é para disponibilizar a agenda para leitura#
 
     for contato in agenda:
-        if nome in contato.split(":")[0]:
+        if nome in contato.split(" : ")[0]:
             print(contato)
             break
 
