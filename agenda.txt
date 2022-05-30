@@ -1,1 +1,2 @@
 PEDRO;1;11323434345; rua Alfa; 3;pedro@gmail.com
+RENATA;2;342344233434;rua t;32;renata.renata@uol.br

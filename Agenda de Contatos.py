@@ -1,30 +1,32 @@
 def menu():
-    opcao=input('''
-    ===============================================================
-                            AGENDA DE CONTATO 
-    ===============================================================        
-                                    MENU:
-    [1] CADASTRAR CONTATOS
-    [2] LISTAR CONTATOS
-    [3] DELETAR CONTATO
-    [4] BUSCAR CONTATO PELO NOME
-    [5] SAIR
-    ===============================================================    
-    ESCOLHA UMA DAS OPÇÕES A CIMA:
-    ''')
+    voltar_menu_principal = 'S'
+    while voltar_menu_principal == 'S':
+        opcao=input('''
+        ===============================================================
+                                AGENDA DE CONTATO 
+        ===============================================================        
+                                        MENU:
+        [1] CADASTRAR CONTATOS
+        [2] LISTAR CONTATOS
+        [3] DELETAR CONTATO
+        [4] BUSCAR CONTATO PELO NOME
+        [5] SAIR
+        ===============================================================    
+        ESCOLHA UMA DAS OPÇÕES A CIMA:
+        ''')
 
 
-    if opcao == "1":
-        cadastrarcontato()
-    elif opcao=="2":
-        listarcontato()
-    elif opcao == "3":
-        deletarcontato()
-    elif opcao == "4":
-        buscarcontato()
-    else:
-        sair()
-
+        if opcao == "1":
+            cadastrarcontato()
+        elif opcao=="2":
+            listarcontato()
+        elif opcao == "3":
+            deletarcontato()
+        elif opcao == "4":
+            buscarcontato()
+        else:
+            sair()
+        voltar_menu_principal = input('Deseja retornar ao menu principal? Sim (s) não (n) ').upper()
 
 def cadastrarcontato():
      nome_contato = str(input('Nome do contato')).strip().upper()
@@ -49,14 +51,14 @@ def listarcontato():
     agenda.close()
 
 def deletarcontato():
-    nome_delet = input("Digite o contato a ser deletato: ")
+    nome_delet = input("Digite o contato a ser deletato: ").upper()
     agenda = open( 'agenda.txt','r')
     aux = []
     aux2 = []
     for i in agenda:
         aux.append(i)
     for i in range(0,len(aux)):
-        if nome_delet not in aux[i]:
+        if nome_delet not in aux[i].upper():
             aux2.append(aux[i])
     agenda = open("agenda.txt","w")
     for i in aux2:
@@ -73,12 +75,9 @@ def buscarcontato():
     for contato in agenda:
         if nome in contato.split(" : ")[0]:
             print(contato)
-            break
 
         else:
             print('contato inexistente')
-            break
-
 
     agenda.close()
 
